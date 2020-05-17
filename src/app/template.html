@@ -1,6 +1,7 @@
 <div [ngClass]="'text-white m-2 p-2 ' + getClasses()">
     Hello, World.
 </div>
-<div ngClass="'text-white m-2 p-2 ' + getClasses()">
-    Hello, World.
+<div class="form-group m-2">
+    <label>Name:</label>
+    <input class="form-control" [value]="model.getProduct(1)?.name || 'None'" />
 </div>
