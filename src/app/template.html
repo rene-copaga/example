@@ -1,8 +1,5 @@
 <div class="text-white m-2">
-    <div [ngClass]="getClassesByPosition(0)">
-        The first product is {{getProductByPosition(0).name}}.
-    </div>
-    <div [ngClass]="getClassesByPosition(1)">
-        The first product is {{getProductByPosition(1).name}}.
+    <div class="bg-info p-2">
+        There are {{getProductCount()}} products.
     </div>
 </div>
