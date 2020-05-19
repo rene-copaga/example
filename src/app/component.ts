@@ -31,4 +31,8 @@ export class ProductComponent {
     }
 
     targetName: string = "Kayak";
+
+    getKey(index: number, product: Product) {
+        return product.id;
+    }
 }
