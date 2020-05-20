@@ -42,4 +42,8 @@ export class ProductComponent {
     get nextProduct(): Product {
         return this.model.getProducts().shift();
     }
+
+    getProductPrice(index: number): number {
+        return Math.floor(this.getProduct(index).price);
+    }
 }
