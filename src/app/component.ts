@@ -2,6 +2,7 @@ import { Component, ApplicationRef } from "@angular/core";
 import { Model } from "./repository.model";
 import { Product } from "./product.model";
 import { NgForm } from "@angular/forms";
+import { ProductFormGroup } from "./form.model";
 
 @Component({
     selector: "app",
@@ -9,6 +10,7 @@ import { NgForm } from "@angular/forms";
 })
 export class ProductComponent {
     model: Model = new Model();
+    form: ProductFormGroup = new ProductFormGroup();
 
     getProduct(key: number): Product {
         return this.model.getProduct(key);
@@ -62,14 +64,5 @@ export class ProductComponent {
             form.reset();
             this.formSubmitted = false;
         }
-    }
-
-    getFormValidationMessages(form: NgForm): string[] {
-        let messages: string[] = [];
-        Object.keys(form.controls).forEach(k => {
-            this.getValidationMessages(form.controls[k], k)
-                .forEach(m => messages.push(m));
-        });
-        return messages;
     }
 }
