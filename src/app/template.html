@@ -22,7 +22,7 @@
             formControlName="{{control.modelProperty}}" />
         <ul class="text-danger list-unstyled" 
                 *ngIf="(formSubmitted || control.dirty) && control.invalid">
-            <li *ngFor="let error of form.control.getValidationMessages()">
+            <li *ngFor="let error of control.getValidationMessages()">
                 {{error}}
             </li>
         </ul>
