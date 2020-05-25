@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ProductComponent } from "./component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PaAttrDirective } from './attr.directive';
 
 @NgModule({
   declarations: [
-    ProductComponent
+    ProductComponent,
+    PaAttrDirective
   ],
   imports: [
     BrowserModule,
