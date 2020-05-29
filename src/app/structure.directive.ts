@@ -1,5 +1,8 @@
-import { ViewContainerRef, TemplateRef, Input, SimpleChange } from "@angular/core";
+import { ViewContainerRef, TemplateRef, Input, SimpleChange, Directive } from "@angular/core";
 
+@Directive({
+    selector: "[paIf]"
+})
 export class PaStructureDirective {
     constructor(private container: ViewContainerRef,
         private template: TemplateRef<Object>) { }
