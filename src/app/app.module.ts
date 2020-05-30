@@ -5,13 +5,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PaAttrDirective } from './attr.directive';
 import { PaModel } from './twoway.directive';
 import { PaStructureDirective } from './structure.directive';
+import { PaIteratorDirective } from './iterator.directive';
 
 @NgModule({
   declarations: [
     ProductComponent,
     PaAttrDirective,
     PaModel,
-    PaStructureDirective
+    PaStructureDirective,
+    PaIteratorDirective
   ],
   imports: [
     BrowserModule,
