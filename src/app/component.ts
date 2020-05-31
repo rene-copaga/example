@@ -30,6 +30,10 @@ export class ProductComponent {
         this.model.saveProduct(p);
     }
 
+    deleteProduct(key: number) {
+        this.model.deleteProduct(key);
+    }
+
     getValidationMessages(state: any, thingName?: string) {
         let thing: string = state.path || thingName;
         let messages: string[] = [];
@@ -65,4 +69,6 @@ export class ProductComponent {
             this.formSubmitted = false;
         }
     }
+
+    showTable: boolean = true;
 }
