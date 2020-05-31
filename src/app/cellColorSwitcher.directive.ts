@@ -16,6 +16,12 @@ export class PaCellColorSwitcher {
         this.updateContentChildren(changes["modelProperty"].currentValue);
     }
 
+    ngAfterContentInit() {
+        this.contentChildren.changes.subscribe(() => {
+            setTimeout(() => this.updateContentChildren(this.modelProperty), 0);
+        });
+    }
+
     private updateContentChildren(dark: Boolean ) {
         if (this.contentChildren != null && dark != undefined) {
             this.contentChildren.forEach((child, index) => {
