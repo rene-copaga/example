@@ -9,6 +9,5 @@ import { Input, Component } from "@angular/core";
 })
 export class PaDiscountDisplayComponent {
 
-    @Input("discounter")
-    discounter: DiscountService;
+    constructor(private discounter: DiscountService) {}
 }
