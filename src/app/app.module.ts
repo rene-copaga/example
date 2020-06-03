@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { ProductComponent } from "./component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PaAttrDirective } from './attr.directive';
@@ -13,6 +13,10 @@ import { ProductFormComponent } from './productForm.component';
 import { PaToggleView } from './toggleView.component';
 import { PaAddTaxPipe } from './addTax.pipe';
 import { PaCategoryFilterPipe } from './categoryFilter.pipe';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -34,7 +38,7 @@ import { PaCategoryFilterPipe } from './categoryFilter.pipe';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
