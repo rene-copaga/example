@@ -17,6 +17,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { PaDiscountDisplayComponent } from './discountDisplay.component';
 import { PaDiscountEditorComponent } from './discountEditor.component';
+import { DiscountService } from './discount.service';
 
 registerLocaleData(localeFr);
 
@@ -43,6 +44,7 @@ registerLocaleData(localeFr);
     ReactiveFormsModule
   ],
   //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [DiscountService],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
