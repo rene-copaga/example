@@ -1,12 +1,7 @@
-<div>
-    <label>Tax Rate:</label>
-    <select [value]="taxRate || 0" (change)="taxRate=$event.target.value">
-        <option value="0">None</option>
-        <option value="10">{{ 0.1 | percent }}</option>
-        <option value="20">{{ 0.2 | percent }}</option>
-        <option value="50">{{ 0.5 | percent }}</option>
-        <option value="150">{{ 1.5 | percent }}</option>
-    </select>
+<div class="bg-info p-2 text-white">
+    <div>Date formatted from object: {{ dateObject | date:"shortDate" }}</div>
+    <div>Date formatted from string: {{ dateString | date:"mediumDate" }}</div>
+    <div>Date formatted from number: {{ dateNumber | date:"longDate" }}</div>
 </div>
 
 <table class="table table-sm table-bordered table-striped">
