@@ -15,6 +15,13 @@ import { PaAddTaxPipe } from './addTax.pipe';
 import { PaCategoryFilterPipe } from './categoryFilter.pipe';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
+import { PaDiscountDisplayComponent } from './discountDisplay.component';
+import { PaDiscountEditorComponent } from './discountEditor.component';
+import { DiscountService } from './discount.service';
+import { PaDiscountPipe } from './discount.pipe';
+import { PaDiscountAmountDirective } from './discountAmount.directive';
+import { SimpleDataSource } from './datasource.model';
+import { Model } from './repository.model';
 
 registerLocaleData(localeFr);
 
@@ -31,7 +38,11 @@ registerLocaleData(localeFr);
     ProductFormComponent,
     PaToggleView,
     PaAddTaxPipe,
-    PaCategoryFilterPipe
+    PaCategoryFilterPipe,
+    PaDiscountDisplayComponent,
+    PaDiscountEditorComponent,
+    PaDiscountPipe,
+    PaDiscountAmountDirective
   ],
   imports: [
     BrowserModule,
@@ -39,6 +50,7 @@ registerLocaleData(localeFr);
     ReactiveFormsModule
   ],
   //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [DiscountService, SimpleDataSource, Model],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
