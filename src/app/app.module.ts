@@ -19,6 +19,7 @@ import { PaDiscountDisplayComponent } from './discountDisplay.component';
 import { PaDiscountEditorComponent } from './discountEditor.component';
 import { DiscountService } from './discount.service';
 import { PaDiscountPipe } from './discount.pipe';
+import { PaDiscountAmountDirective } from './discountAmount.directive';
 
 registerLocaleData(localeFr);
 
@@ -38,7 +39,8 @@ registerLocaleData(localeFr);
     PaCategoryFilterPipe,
     PaDiscountDisplayComponent,
     PaDiscountEditorComponent,
-    PaDiscountPipe
+    PaDiscountPipe,
+    PaDiscountAmountDirective
   ],
   imports: [
     BrowserModule,
