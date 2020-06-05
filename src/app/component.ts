@@ -8,7 +8,9 @@ import { Product } from "./product.model";
     //styles: ["/deep/ div { border: 2px black solid; font-style:italic }"]
 })
 export class ProductComponent {
-    model: Model = new Model();
+    //model: Model = new Model();
+
+    constructor(private model: Model) { }
 
     addProduct(p: Product) {
         this.model.saveProduct(p);
