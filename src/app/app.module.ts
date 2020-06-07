@@ -52,7 +52,7 @@ registerLocaleData(localeFr);
   ],
   //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   providers: [DiscountService, SimpleDataSource, Model,
-              { provide: LogService, useClass: LogService }],
+              { provide: "logger", useClass: LogService }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }

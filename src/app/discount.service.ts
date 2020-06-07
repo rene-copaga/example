@@ -1,11 +1,11 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject } from "@angular/core";
 import { LogService } from "./log.service";
 
 @Injectable()
 export class DiscountService {
     private discountValue: number = 10;
 
-    constructor(private logger: LogService) { }
+    constructor(@Inject("logger") private logger: LogService) { }
 
     public get discount() : number {
         return this.discountValue;
