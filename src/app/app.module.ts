@@ -52,7 +52,8 @@ registerLocaleData(localeFr);
   ],
   //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   providers: [DiscountService, SimpleDataSource, Model,
-              { provide: LOG_SERVICE, useClass: SpecialLogService }],
+              { provide: LOG_SERVICE, useClass: LogService, multi: true },
+              { provide: LOG_SERVICE, useClass: SpecialLogService, multi: true }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
