@@ -22,7 +22,7 @@ import { PaDiscountPipe } from './discount.pipe';
 import { PaDiscountAmountDirective } from './discountAmount.directive';
 import { SimpleDataSource } from './datasource.model';
 import { Model } from './repository.model';
-import { LogService, LOG_SERVICE, SpecialLogService, LogLevel } from './log.service';
+import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from './log.service';
 
 let logger = new LogService();
 logger.minimumLevel = LogLevel.DEBUG;
@@ -52,7 +52,15 @@ logger.minimumLevel = LogLevel.DEBUG;
     ReactiveFormsModule
   ],
   providers: [DiscountService, SimpleDataSource, Model,
-              { provide: LogService, useValue: logger }],
+      { provide: LOG_LEVEL, useValue: LogLevel.DEBUG },
+      { provide: LogService,
+        deps: [LOG_LEVEL],
+        useFactory: (level) => {
+          let logger = new LogService();
+          logger.minimumLevel = level;
+          return logger;
+        }
+      }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
