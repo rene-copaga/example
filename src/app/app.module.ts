@@ -55,6 +55,6 @@ logger.minimumLevel = LogLevel.DEBUG;
   ],
   providers: [DiscountService, SimpleDataSource, Model, LogService,
       { provide: VALUE_SERVICE, useValue: "Apples" }],
-  bootstrap: [ProductComponent]
+  bootstrap: [ProductFormComponent, ProductTableComponent]
 })
 export class AppModule { }
