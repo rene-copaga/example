@@ -22,8 +22,11 @@ import { PaDiscountPipe } from './discount.pipe';
 import { PaDiscountAmountDirective } from './discountAmount.directive';
 import { SimpleDataSource } from './datasource.model';
 import { Model } from './repository.model';
+import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from './log.service';
+import { VALUE_SERVICE, PaDisplayValueDirective } from './valueDisplay.directive';
 
-registerLocaleData(localeFr);
+let logger = new LogService();
+logger.minimumLevel = LogLevel.DEBUG;
 
 @NgModule({
   declarations: [
@@ -42,15 +45,16 @@ registerLocaleData(localeFr);
     PaDiscountDisplayComponent,
     PaDiscountEditorComponent,
     PaDiscountPipe,
-    PaDiscountAmountDirective
+    PaDiscountAmountDirective,
+    PaDisplayValueDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  //providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
-  providers: [DiscountService, SimpleDataSource, Model],
+  providers: [DiscountService, SimpleDataSource, Model, LogService,
+      { provide: VALUE_SERVICE, useValue: "Apples" }],
   bootstrap: [ProductComponent]
 })
 export class AppModule { }
