@@ -2,27 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ProductComponent } from "./component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { ProductTableComponent } from './productTable.component';
-import { ProductFormComponent } from './productForm.component';
-import { PaDiscountDisplayComponent } from './discountDisplay.component';
-import { PaDiscountEditorComponent } from './discountEditor.component';
 import { ModelModule } from "./model/model.module";
 import { CommonModule } from './common/common.module';
+import { ComponentsModule } from './components/components.module';
+import { ProductFormComponent } from './components/productForm.component';
+import { ProductTableComponent } from './components/productTable.component';
 
 @NgModule({
-  declarations: [
-    ProductComponent,
-    ProductTableComponent,
-    ProductFormComponent,
-    PaDiscountDisplayComponent,
-    PaDiscountEditorComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     ModelModule,
-    CommonModule
+    CommonModule,
+    ComponentsModule
   ],
   bootstrap: [ProductFormComponent, ProductTableComponent]
 })
