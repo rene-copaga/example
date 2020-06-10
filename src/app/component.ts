@@ -1,6 +1,4 @@
 import { Component } from "@angular/core";
-import { Model } from "./repository.model";
-import { Product } from "./product.model";
 
 @Component({
     selector: "app",
