@@ -1,4 +1,4 @@
-import { DiscountService } from "./discount.service";
+import { DiscountService } from "./common/discount.service";
 import { Input, Component } from "@angular/core";
 
 @Component({
