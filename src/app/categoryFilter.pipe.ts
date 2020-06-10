@@ -1,4 +1,4 @@
-import { Product } from "./product.model";
+import { Product } from "./model/product.model";
 import { Pipe } from "@angular/core";
 
 @Pipe({
