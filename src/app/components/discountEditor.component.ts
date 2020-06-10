@@ -1,5 +1,5 @@
 import { Input, Component } from "@angular/core";
-import { DiscountService } from "./common/discount.service";
+import { DiscountService } from "../common/discount.service";
 
 @Component({
     selector: "paDiscountEditor",

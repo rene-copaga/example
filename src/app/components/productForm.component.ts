@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output, ViewEncapsulation, Inject, SkipSelf } from "@angular/core";
-import { ProductFormGroup } from "./model/form.model";
-import { Product } from "./model/product.model";
-import { Model } from "./model/repository.model";
-import { VALUE_SERVICE } from "./common/valueDisplay.directive";
+import { ProductFormGroup } from "../model/form.model";
+import { Product } from "../model/product.model";
+import { Model } from "../model/repository.model";
+import { VALUE_SERVICE } from "../common/valueDisplay.directive";
 
 @Component({
     selector: "paProductForm",
