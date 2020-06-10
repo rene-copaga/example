@@ -20,8 +20,7 @@ import { PaDiscountEditorComponent } from './discountEditor.component';
 import { DiscountService } from './discount.service';
 import { PaDiscountPipe } from './discount.pipe';
 import { PaDiscountAmountDirective } from './discountAmount.directive';
-import { SimpleDataSource } from './datasource.model';
-import { Model } from './repository.model';
+import { ModelModule } from "./model/model.module";
 import { LogService, LOG_SERVICE, SpecialLogService, LogLevel, LOG_LEVEL } from './log.service';
 import { VALUE_SERVICE, PaDisplayValueDirective } from './valueDisplay.directive';
 
@@ -51,9 +50,10 @@ logger.minimumLevel = LogLevel.DEBUG;
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModelModule
   ],
-  providers: [DiscountService, SimpleDataSource, Model, LogService,
+  providers: [DiscountService, LogService,
       { provide: VALUE_SERVICE, useValue: "Apples" }],
   bootstrap: [ProductFormComponent, ProductTableComponent]
 })
